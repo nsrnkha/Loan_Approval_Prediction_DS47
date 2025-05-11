@@ -36,7 +36,7 @@ def run_ml_app():
     st.markdown(design, unsafe_allow_html=True)
     
      #membuat struktur form
-    left, right = st.colums((2,2))
+    left, right = st.columns((2,2))
     gender = left.selectbox('Gender', ('Male', 'Female'))
     married = right.selectbox('Married', ('Yes', 'No'))
     dependent = left.selectbox('Dependent', (0, 1, 2, 3))
