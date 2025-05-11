@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as stc
 import pickle
 
-with open('Logistic_Regression_Model.pkl', 'rb') as file:
+with open('logistic_regression_model.pkl', 'rb') as file:
     Logistic_Regression_Model = pickle.load(file)
 
 html_temp = """<div style="background-color:#000;padding:10px;border-radius:10px">
@@ -72,7 +72,7 @@ def predict(gender, married, dependent, education, self_employed, applicant_inco
     pro = 0 if property_area == 'Semiurban' else 1 if property_area == 'Urban' else 2
 
     #Making prediction
-    prediction = Logistic_Regression_Model.predict(
+    prediction = logistic_regression_model.predict(
         [[gen, mar, dependent, edu, sem, applicant_income, coApplicant_income,
           loan_amount, loan_amount_term, credit_history, pro]])
     
